@@ -23,8 +23,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install poetry
     - name: Install Package
+      working-directory: ./webcalc
       run: |
         poetry install
     - name: Test with Unittest
+      working-directory: ./webcalc
       run: |
         poetry run python -u -m unittest discover tests
